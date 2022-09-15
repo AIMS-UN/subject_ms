@@ -1,20 +1,29 @@
-version: '3.1'
+version: "3.1"
 
 services:
-  db:
-    image: 'openkbs/mysql-workbench:latest'
+  aims_subject_db:
+    image: mysql:5.7
     container_name: aims_subject_db
     ports:
-      - "3306:3306"
+      - "3307:3306"
     environment:
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=Juandi.123
-      - MYSQL_DBNAME=aims_subject_db
-  subject_ms:
-    image: 'subject_ms:latest'
-    build: ./
-    container_name:  subject_ms
+      - MYSQL_ROOT_PASSWORD=rootPassword
+      - MYSQL_DATABASE=aims_subject_db
+      - MYSQL_USER=aims_subject_user
+      - MYSQL_PASSWORD=aims_subject_password
+    networks:
+      - aims_subject_network
+  aims_subject_ms:
+    build: .
+    image: aims_subject_ms
+    container_name: aims_subject_ms
     depends_on:
-      - db
+      - aims_subject_db
     ports:
       - "8081:8080"
+    networks:
+      - aims_subject_network
+
+networks:
+  aims_subject_network:
+    driver: bridge
