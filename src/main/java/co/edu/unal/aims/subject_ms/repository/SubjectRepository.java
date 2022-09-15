@@ -1,6 +1,6 @@
 package co.edu.unal.aims.subject_ms.repository;
 
-import co.edu.unal.aims.subject_ms.model.subjects.Subjects;
+import co.edu.unal.aims.subject_ms.model.Subjects;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

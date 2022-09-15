@@ -1,6 +1,6 @@
 package co.edu.unal.aims.subject_ms.service;
 
-import co.edu.unal.aims.subject_ms.model.subjects.Subjects;
+import co.edu.unal.aims.subject_ms.model.Subjects;
 import co.edu.unal.aims.subject_ms.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

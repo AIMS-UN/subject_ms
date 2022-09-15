@@ -1,4 +1,4 @@
-package co.edu.unal.aims.subject_ms.model.subjects;
+package co.edu.unal.aims.subject_ms.model;
 
 
 import lombok.AllArgsConstructor;

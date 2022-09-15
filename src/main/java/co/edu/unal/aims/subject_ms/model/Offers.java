@@ -1,26 +1,28 @@
-package co.edu.unal.aims.subject_ms.model.subjects;
+package co.edu.unal.aims.subject_ms.model;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
+
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Schedules {
+public class Offers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer schedule_id;
-    private Integer day;
+    private Integer group_id;
+    private String level;
+    private String tipology;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn()
-    private TimeSlots timeSlots;
+    private Subjects subjects;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn()
-    private  ClassGroups classGroups;
+    private ClassGroups classGroups;
 }
-
