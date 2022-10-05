@@ -2,35 +2,35 @@ version: "3.8"
 name: aims
 
 services:
-  subject_db:
+  subject-db:
     image: mysql:latest
     container_name: subject_db
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=subject
+      - MYSQL_DATABASE=subjects
       - MYSQL_USER=aims
       - MYSQL_PASSWORD=aims
     ports:
-      - "3307:3306"
+      - "3309:3306"
     volumes:
-      - subject:/var/lib/mysql
+      - subject_db_data:/var/lib/mysql
 
-  subject_ms:
+  subject-ms:
     build: .
     image: aims_subject_ms
     container_name: subject_ms
     depends_on:
-      - subject_db
+      - subject-db
     links:
-      - subject_db
+      - subject-db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://subject_db:3306/subject
+      - SPRING_DATASOURCE_URL=jdbc:mysql://subject-db:3306/subjects
       - SPRING_DATASOURCE_USERNAME=aims
       - SPRING_DATASOURCE_PASSWORD=aims
     ports:
       - "8081:8080"
 
 volumes:
-  subject:
+  subject_db_data:
