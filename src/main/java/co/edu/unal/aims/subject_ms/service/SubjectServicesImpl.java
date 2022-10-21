@@ -18,7 +18,7 @@ public class SubjectServicesImpl implements SubjectService{
     }
 
     @Override
-    public List<Subjects> buscarPorCodigo(Integer code) {
+    public List<Subjects> buscarPorCodigo(String code) {
         return subjectRepository.findByCode(code);
     }
 

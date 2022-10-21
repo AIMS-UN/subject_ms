@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface SubjectRepository extends JpaRepository<Subjects, Integer> {
     List<Subjects> findByName(String name);
-    List<Subjects> findByCode(Integer code);
+    List<Subjects> findByCode(String code);
     List<Subjects> findByCareer(Integer career);
 
 

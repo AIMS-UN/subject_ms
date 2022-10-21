@@ -7,7 +7,7 @@ import java.util.List;
 @Service
 public interface SubjectService {
     List<Subjects> buscarPorNombre (String name);
-    List<Subjects> buscarPorCodigo (Integer code);
+    List<Subjects> buscarPorCodigo (String code);
     List<Subjects> buscarPorCarrera (Integer career);
 
 }

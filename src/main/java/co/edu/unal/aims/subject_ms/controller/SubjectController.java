@@ -21,7 +21,7 @@ public class SubjectController {
 
     @GetMapping
     public ResponseEntity<List<Subjects>> listSubjects(@RequestParam(name="name",required=false) String name,
-                                                       @RequestParam(name="code",required=false) Integer code,
+                                                       @RequestParam(name="code",required=false) String code,
                                                        @RequestParam(name="career",required = false)Integer career){
         //System.out.println(name + " " + code);
         List<Subjects> subjects=new ArrayList<>();

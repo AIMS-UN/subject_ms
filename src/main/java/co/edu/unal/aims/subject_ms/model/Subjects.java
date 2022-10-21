@@ -22,7 +22,7 @@ public class Subjects {
     private String name;
     private String curriculum;
     private Integer credits;
-    private Integer code;
+    private String code;
     private Integer career;
 
 }
