@@ -24,6 +24,6 @@ public class Schedules {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn()
-    private ClassGroups classGroups;
+    private Group groups;
 
 }

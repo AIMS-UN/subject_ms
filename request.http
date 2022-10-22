@@ -6,23 +6,24 @@
 
 @groupId=cca4c365-befb-4d4b-bd42-d9b92384a57d
 
+### Get all subjects
+# @name get_all_subjects
+GET {{baseUrl}}/subjects HTTP/1.1
 
 ### Get subjects by code
 # @name get_subject_by_code
-GET {{baseUrl}}/subjects?code={{subjectCode}} HTTP/1.1
-
-### Get subjects by name
-# @name get_subject_by_name
-GET {{baseUrl}}/subjects?name={{subjectName}} HTTP/1.1
+GET {{baseUrl}}/subjects/{{subjectCode}} HTTP/1.1
 
 ### Get subject by carrer_id
 # @name get_subject_by_career_id
 GET {{baseUrl}}/subjects?career={{careerId}} HTTP/1.1
 
-
-
 ### ---- Class Groups ----
+
+### Get all class groups
+# @name get_all_class_groups
+GET {{baseUrl}}/groups HTTP/1.1
 
 ### Get group by id
 # @name get_group_by_id
-GET {{baseUrl}}/group/{{groupId}} HTTP/1.1
+GET {{baseUrl}}/groups/{{groupId}} HTTP/1.1

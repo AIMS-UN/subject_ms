@@ -5,15 +5,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import co.edu.unal.aims.subject_ms.model.Subjects;
+import co.edu.unal.aims.subject_ms.model.Subject;
 
 @Repository
-public interface SubjectRepository extends JpaRepository<Subjects, Integer> {
+public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
-    List<Subjects> findByName(String name);
+    Subject findBySubjectCode(String subjectCode);
 
-    List<Subjects> findByCode(String code);
-
-    List<Subjects> findByCareer(Integer career);
+    List<Subject> findByCareerId(Integer careerId);
 
 }

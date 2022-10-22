@@ -1,4 +1,10 @@
-INSERT INTO subjects (career, code, credits, curriculum, name)
+INSERT INTO subjects (
+        career_id,
+        subject_code,
+        credits,
+        curriculum,
+        subject_name
+    )
 VALUES (
         1,
         '1053486524-B',
@@ -6,7 +12,13 @@ VALUES (
         'curriculum-1',
         'Mathematics'
     );
-INSERT INTO subjects (career, code, credits, curriculum, name)
+INSERT INTO subjects (
+        career_id,
+        subject_code,
+        credits,
+        curriculum,
+        subject_name
+    )
 VALUES (
         1,
         '1053486524-C',
@@ -14,7 +26,13 @@ VALUES (
         'curriculum-1',
         'Physics'
     );
-INSERT INTO subjects (career, code, credits, curriculum, name)
+INSERT INTO subjects (
+        career_id,
+        subject_code,
+        credits,
+        curriculum,
+        subject_name
+    )
 VALUES (
         1,
         '1053486524-D',
@@ -22,7 +40,13 @@ VALUES (
         'curriculum-1',
         'Chemistry'
     );
-INSERT INTO subjects (career, code, credits, curriculum, name)
+INSERT INTO subjects (
+        career_id,
+        subject_code,
+        credits,
+        curriculum,
+        subject_name
+    )
 VALUES (
         1,
         '1053486524-E',

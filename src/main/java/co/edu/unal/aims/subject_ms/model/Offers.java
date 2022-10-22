@@ -22,10 +22,10 @@ public class Offers {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn()
-    private Subjects subjects;
+    private Subject subjects;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn()
-    private ClassGroups classGroups;
+    private Group groups;
 
 }

@@ -14,16 +14,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClassGroups {
+@Table(name = "class_groups")
+public class Group {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "uuid-char")
-    @Column(name = "classGroupId", columnDefinition = "VARCHAR(255)", insertable = false, updatable = false, nullable = false)
-    private UUID classGroupId;
+    @Column(name = "groupId", columnDefinition = "VARCHAR(255)", insertable = false, updatable = false, nullable = false)
+    private UUID groupId;
 
-    private Integer max_capacity;
+    @Column(name = "max_capacity", nullable = false)
+    private Integer maxCapacity;
 
-    private String teacher_id;
+    @Column(name = "teacher_id", nullable = false)
+    private String teacherId;
 
 }

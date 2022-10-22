@@ -4,15 +4,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import co.edu.unal.aims.subject_ms.model.Subjects;
+import co.edu.unal.aims.subject_ms.model.Subject;
 
 @Service
 public interface SubjectService {
 
-    List<Subjects> buscarPorNombre(String name);
+    List<Subject> getAll();
 
-    List<Subjects> buscarPorCodigo(String code);
+    Subject getBySubjectCode(String subjectCode);
 
-    List<Subjects> buscarPorCarrera(Integer career);
+    List<Subject> getAllByCareerId(Integer careerId);
 
 }

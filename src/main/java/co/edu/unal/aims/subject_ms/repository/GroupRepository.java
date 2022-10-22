@@ -5,11 +5,11 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import co.edu.unal.aims.subject_ms.model.ClassGroups;
+import co.edu.unal.aims.subject_ms.model.Group;
 
 @Repository
-public interface ClassGroupRepository extends JpaRepository<ClassGroups, UUID> {
+public interface GroupRepository extends JpaRepository<Group, UUID> {
 
-     ClassGroups findByClassGroupId(UUID classGroupId);
+     Group findByGroupId(UUID groupId);
 
 }

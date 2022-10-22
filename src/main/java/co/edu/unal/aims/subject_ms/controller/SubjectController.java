@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import co.edu.unal.aims.subject_ms.model.Subjects;
+import co.edu.unal.aims.subject_ms.model.Subject;
 import co.edu.unal.aims.subject_ms.service.SubjectService;
 
 @RestController
@@ -22,29 +22,32 @@ public class SubjectController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Subjects>> listSubjects(@RequestParam(name = "name", required = false) String name,
-            @RequestParam(name = "code", required = false) String code,
-            @RequestParam(name = "career", required = false) Integer career) {
-        List<Subjects> subjects = new ArrayList<>();
+    public ResponseEntity<List<Subject>> listSubjects(
+            @RequestParam(name = "career_id", required = false) Integer careerId) {
+        List<Subject> subjects = new ArrayList<>();
 
-        if (name != null && code == null && career == null) {
-            subjects = subjectService.buscarPorNombre(name);
-            System.out.println(subjects);
-        } else if (name == null && code != null && career == null) {
-            subjects = subjectService.buscarPorCodigo(code);
-            System.out.println(subjects);
-        } else if (name == null && code == null && career != null) {
-            subjects = subjectService.buscarPorCarrera(career);
-            System.out.println(subjects);
-        }
-
-        if (subjects == null) {
-            return ResponseEntity.notFound().build();
-        } else if (subjects.isEmpty()) {
-            return ResponseEntity.noContent().build();
+        if (careerId == null) {
+            subjects = subjectService.getAll();
         } else {
-            return ResponseEntity.ok(subjects);
+            subjects = subjectService.getAllByCareerId(careerId);
         }
+
+        if (subjects.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(subjects);
+    }
+
+    @GetMapping("/{subject_code}")
+    public ResponseEntity<Subject> getSubject(@PathVariable("subject_code") String subjectCode) {
+        Subject subject = subjectService.getBySubjectCode(subjectCode);
+
+        if (subject == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(subject);
     }
 
 }

@@ -18,6 +18,6 @@ public class Requirements {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn()
-    private Subjects subjects;
+    private Subject subjects;
 
 }
