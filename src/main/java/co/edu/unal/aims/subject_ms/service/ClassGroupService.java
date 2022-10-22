@@ -1,10 +1,14 @@
 package co.edu.unal.aims.subject_ms.service;
 
-import co.edu.unal.aims.subject_ms.model.ClassGroups;
-import org.springframework.stereotype.Service;
 import java.util.UUID;
-import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import co.edu.unal.aims.subject_ms.model.ClassGroups;
+
 @Service
 public interface ClassGroupService {
-    ClassGroups buscarPorClassGroupId (UUID classGroupId);
+
+    ClassGroups buscarPorClassGroupId(UUID classGroupId);
+
 }

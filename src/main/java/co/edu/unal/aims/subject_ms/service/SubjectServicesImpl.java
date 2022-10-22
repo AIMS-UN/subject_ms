@@ -1,14 +1,16 @@
 package co.edu.unal.aims.subject_ms.service;
 
-import co.edu.unal.aims.subject_ms.model.Subjects;
-import co.edu.unal.aims.subject_ms.repository.SubjectRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import co.edu.unal.aims.subject_ms.model.Subjects;
+import co.edu.unal.aims.subject_ms.repository.SubjectRepository;
 
 @Service
-public class SubjectServicesImpl implements SubjectService{
+public class SubjectServicesImpl implements SubjectService {
+
     @Autowired
     private SubjectRepository subjectRepository;
 
@@ -26,6 +28,5 @@ public class SubjectServicesImpl implements SubjectService{
     public List<Subjects> buscarPorCarrera(Integer career) {
         return subjectRepository.findByCareer(career);
     }
-
 
 }
