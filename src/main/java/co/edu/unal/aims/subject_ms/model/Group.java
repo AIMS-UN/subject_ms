@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 import org.hibernate.annotations.Type;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,5 +30,10 @@ public class Group {
 
     @Column(name = "teacher_id", nullable = false)
     private String teacherId;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "subject_id")
+    @JsonBackReference
+    private Subject subject;
 
 }

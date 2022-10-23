@@ -1,6 +1,10 @@
 package co.edu.unal.aims.subject_ms.model;
 
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,5 +36,10 @@ public class Subject {
     private String curriculum;
 
     private Integer credits;
+
+    @OneToMany(mappedBy = "subject", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @Column(nullable = true)
+    @JsonManagedReference
+    private List<Group> groups;
 
 }
