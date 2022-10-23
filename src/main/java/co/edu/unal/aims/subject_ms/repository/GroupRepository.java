@@ -10,6 +10,4 @@ import co.edu.unal.aims.subject_ms.model.Group;
 @Repository
 public interface GroupRepository extends JpaRepository<Group, UUID> {
 
-     Group findByGroupId(UUID groupId);
-
 }

@@ -22,13 +22,13 @@ public class groupController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Group>> getAll() {
-        return ResponseEntity.ok(groupService.getAll());
+    public ResponseEntity<List<Group>> getGroups() {
+        return ResponseEntity.ok(groupService.findAll());
     }
 
-    @GetMapping("/{group_id}")
-    public ResponseEntity<Group> getGroup(@PathVariable("group_id") UUID groupId) {
-        Group group = groupService.getByGroupId(groupId);
+    @GetMapping("/{groupId}")
+    public ResponseEntity<Group> getGroup(@PathVariable("groupId") UUID groupId) {
+        Group group = groupService.findById(groupId);
 
         if (group == null) {
             return ResponseEntity.notFound().build();

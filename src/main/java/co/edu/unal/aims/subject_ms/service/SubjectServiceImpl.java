@@ -15,18 +15,28 @@ public class SubjectServiceImpl implements SubjectService {
     private SubjectRepository subjectRepository;
 
     @Override
-    public List<Subject> getAll() {
+    public Subject findById(Integer subjectId) {
+        return subjectRepository.findById(subjectId).orElse(null);
+    }
+
+    @Override
+    public List<Subject> findAll() {
         return subjectRepository.findAll();
     }
 
     @Override
-    public Subject getBySubjectCode(String subjectCode) {
-        return subjectRepository.findBySubjectCode(subjectCode);
+    public List<Subject> findAllBySubjectCode(String subjectCode) {
+        return subjectRepository.findAllBySubjectCode(subjectCode);
     }
 
     @Override
-    public List<Subject> getAllByCareerId(Integer careerId) {
-        return subjectRepository.findByCareerId(careerId);
+    public List<Subject> findAllByCareerId(Integer careerId) {
+        return subjectRepository.findAllByCareerId(careerId);
+    }
+
+    @Override
+    public List<Subject> findAllBySubjectName(String subjectName) {
+        return subjectRepository.findAllBySubjectName(subjectName);
     }
 
 }

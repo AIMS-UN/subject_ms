@@ -10,8 +10,10 @@ import co.edu.unal.aims.subject_ms.model.Subject;
 @Repository
 public interface SubjectRepository extends JpaRepository<Subject, Integer> {
 
-    Subject findBySubjectCode(String subjectCode);
+    List<Subject> findAllBySubjectCode(String subjectCode);
 
-    List<Subject> findByCareerId(Integer careerId);
+    List<Subject> findAllByCareerId(Integer careerId);
+
+    List<Subject> findAllBySubjectName(String subjectName);
 
 }

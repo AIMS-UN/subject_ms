@@ -16,13 +16,13 @@ public class GroupServiceImpl implements GroupService {
     private GroupRepository groupRepository;
 
     @Override
-    public List<Group> getAll() {
-        return groupRepository.findAll();
+    public Group findById(UUID groupId) {
+        return groupRepository.findById(groupId).orElse(null);
     }
 
     @Override
-    public Group getByGroupId(UUID groupId) {
-        return groupRepository.findByGroupId(groupId);
+    public List<Group> findAll() {
+        return groupRepository.findAll();
     }
 
 }

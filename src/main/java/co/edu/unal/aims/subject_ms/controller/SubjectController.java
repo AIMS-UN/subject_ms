@@ -22,26 +22,28 @@ public class SubjectController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Subject>> listSubjects(
-            @RequestParam(name = "career_id", required = false) Integer careerId) {
+    public ResponseEntity<List<Subject>> getSubjects(
+            @RequestParam(name = "subjectCode", required = false) String subjectCode,
+            @RequestParam(name = "careerId", required = false) Integer careerId,
+            @RequestParam(name = "subjectName", required = false) String subjectName) {
         List<Subject> subjects = new ArrayList<>();
 
-        if (careerId == null) {
-            subjects = subjectService.getAll();
+        if (subjectCode != null) {
+            subjects = subjectService.findAllBySubjectCode(subjectCode);
+        } else if (careerId != null) {
+            subjects = subjectService.findAllByCareerId(careerId);
+        } else if (subjectName != null) {
+            subjects = subjectService.findAllBySubjectName(subjectName);
         } else {
-            subjects = subjectService.getAllByCareerId(careerId);
-        }
-
-        if (subjects.isEmpty()) {
-            return ResponseEntity.notFound().build();
+            subjects = subjectService.findAll();
         }
 
         return ResponseEntity.ok(subjects);
     }
 
-    @GetMapping("/{subject_code}")
-    public ResponseEntity<Subject> getSubject(@PathVariable("subject_code") String subjectCode) {
-        Subject subject = subjectService.getBySubjectCode(subjectCode);
+    @GetMapping(value = "/{subjectId}")
+    public ResponseEntity<Subject> getSubject(@PathVariable("subjectId") Integer subjectId) {
+        Subject subject = subjectService.findById(subjectId);
 
         if (subject == null) {
             return ResponseEntity.notFound().build();

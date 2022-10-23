@@ -2,27 +2,40 @@
 
 @subjectCode=1053486524-B
 @careerId=1
+@subjectName=Physics
+@subjectId=1
 
 @groupId=cca4c365-befb-4d4b-bd42-d9b92384a57d
 
+### ---- Subjects ----
+
 ### Get all subjects
-# @name get_all_subjects
+# @name getSubjects
 GET {{baseUrl}}/subjects HTTP/1.1
 
-### Get subjects by code
-# @name get_subject_by_code
-GET {{baseUrl}}/subjects/{{subjectCode}} HTTP/1.1
+### Get subject by carrer id
+# @name getSubjectByCareerId
+GET {{baseUrl}}/subjects?careerId={{careerId}} HTTP/1.1
 
-### Get subject by carrer_id
-# @name get_subject_by_career_id
-GET {{baseUrl}}/subjects?career={{careerId}} HTTP/1.1
+### Get subject by subject code
+# @name getSubjectBySubjectCode
+GET {{baseUrl}}/subjects?subjectCode={{subjectCode}} HTTP/1.1
+
+### Get subject by subject_name
+# @name getSubjectBySubjectName
+GET {{baseUrl}}/subjects?subjectName={{subjectName}} HTTP/1.1
+
+### Get subject by subject id
+# @name getSubjectBySubjectId
+GET {{baseUrl}}/subjects/{{subjectId}} HTTP/1.1
+
 
 ### ---- Class Groups ----
 
 ### Get all class groups
-# @name get_all_class_groups
+# @name getClassGroups
 GET {{baseUrl}}/groups HTTP/1.1
 
 ### Get group by id
-# @name get_group_by_id
+# @name getGroupById
 GET {{baseUrl}}/groups/{{groupId}} HTTP/1.1

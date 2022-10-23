@@ -9,10 +9,14 @@ import co.edu.unal.aims.subject_ms.model.Subject;
 @Service
 public interface SubjectService {
 
-    List<Subject> getAll();
+    Subject findById(Integer subjectId);
 
-    Subject getBySubjectCode(String subjectCode);
+    List<Subject> findAll();
 
-    List<Subject> getAllByCareerId(Integer careerId);
+    List<Subject> findAllBySubjectCode(String subjectCode);
+
+    List<Subject> findAllByCareerId(Integer careerId);
+
+    List<Subject> findAllBySubjectName(String subjectName);
 
 }

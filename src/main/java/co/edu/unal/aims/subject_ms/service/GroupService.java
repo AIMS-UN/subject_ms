@@ -10,8 +10,8 @@ import co.edu.unal.aims.subject_ms.model.Group;
 @Service
 public interface GroupService {
 
-    List<Group> getAll();
+    Group findById(UUID groupId);
 
-    Group getByGroupId(UUID groupId);
+    List<Group> findAll();
 
 }
