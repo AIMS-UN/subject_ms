@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,16 +21,16 @@ public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "subject_id", columnDefinition = "INT", insertable = false, updatable = false, nullable = false)
+    @Column(insertable = false, updatable = false, nullable = false)
     private Integer subjectId;
 
-    @Column(name = "subject_name", nullable = false)
+    @Column(nullable = false)
     private String subjectName;
 
-    @Column(name = "subject_code", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String subjectCode;
 
-    @Column(name = "career_id", nullable = false)
+    @Column(nullable = false)
     private Integer careerId;
 
     private String curriculum;
@@ -38,8 +38,8 @@ public class Subject {
     private Integer credits;
 
     @OneToMany(mappedBy = "subject", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("subject")
     @Column(nullable = true)
-    @JsonManagedReference
     private List<Group> groups;
 
 }
