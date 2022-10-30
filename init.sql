@@ -8,7 +8,7 @@ VALUES --
     1,
     1,
     '1053486524-B',
-    5,
+    3,
     'curriculum-1',
     'Introducción a la criptografía y la seguridad informática'
 ),
@@ -16,15 +16,15 @@ VALUES --
     2,
     1,
     '1053486524-C',
-    5,
+    3,
     'curriculum-1',
     'Ingeniería de Software I'
 ),
 (
     3,
-    1,
+    2,
     '1053486524-D',
-    5,
+    4,
     'curriculum-1',
     'Ingeniería de Software II'
 ),
@@ -32,7 +32,7 @@ VALUES --
     4,
     1,
     '1053486524-E',
-    5,
+    8,
     'curriculum-1',
     'Arquitectura de Software'
 );
@@ -40,37 +40,37 @@ INSERT INTO class_groups (group_id, max_capacity, teacher_id, subject_id)
 VALUES (
         'cca4c365-befb-4d4b-bd42-d9b92384a57d',
         25,
-        '2006bc4f-db29-4248-8025-d36348017d2d',
+        'fd6644f8-f987-4da4-93c3-8b25e3a37f62',
         1
     ),
     (
         'd0b5c4b5-5b1f-4b2b-9b2c-9b2c9b2c9b2c',
         25,
-        '2006bc4f-db29-4248-8025-d36348017d2d',
+        'fd6644f8-f987-4da4-93c3-8b25e3a37f62',
         1
     ),
     (
         'd0b5c4b5-5b1f-4b2b-9b2c-9b2c9b2c9b2d',
         30,
-        '2006bc4f-db29-4248-8025-d36348017d2d',
+        'fd6644f8-f987-4da4-93c3-8b25e3a37f62',
         2
     ),
     (
         'd0b5c4b5-5b1f-4b2b-9b2c-9b2c9b2c9b2e',
         30,
-        '2006bc4f-db29-4248-8025-d36348017d2d',
+        'fd6644f8-f987-4da4-93c3-8b25e3a37f62',
         3
     ),
     (
         'a1933e14-95c6-4add-9a74-2cc0b83d554d',
         40,
-        '2006bc4f-db29-4248-8025-d36348017d2d',
+        'fd6644f8-f987-4da4-93c3-8b25e3a37f62',
         4
     ),
     (
         '2d3c0e52-a09c-47db-8c42-8028f6e9856c',
         40,
-        '2006bc4f-db29-4248-8025-d36348017d2d',
+        'fd6644f8-f987-4da4-93c3-8b25e3a37f62',
         4
     );
 INSERT INTO schedules (
